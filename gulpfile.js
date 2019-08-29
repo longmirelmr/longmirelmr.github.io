@@ -25,9 +25,13 @@ gulp.task('scripts', function() {
     'js/vendor/jquery.min.js',
     'js/vendor/jquery.easing.1.3.js',
     'js/vendor/jquery.stellar.min.js',
-    'js/vendor/bootstrap.min.js',
-    'js/vendor/jquery.waypoints.min.js',
+    'js/vendor/jquery.flexslider-min.js',
+    'js/vendor/jquery.countTo.js',
+    'js/vendor/jquery.appear.min.js',
     'js/vendor/jquery.magnific-popup.min.js',
+    'js/vendor/owl.carousel.min.js',
+    'js/vendor/bootstrap.min.js',
+    'js/vendor/jquery.waypoints.min.js'
     ])
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('js'))
@@ -36,10 +40,10 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('js'));
 });
 
-gulp.task('minify-custom', function() {
+gulp.task('minify-main', function() {
   return gulp.src([
     /* Add your JS files here, they will be combined in this order */
-    'js/custom.js'
+    'js/main.js'
     ])
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
@@ -79,7 +83,13 @@ gulp.task('merge-styles', function () {
     return gulp.src([
         'css/vendor/bootstrap.min.css',
         'css/vendor/animate.css',
+        'css/vendor/icomoon.css',
+        'css/vendor/flexslider.css',
+        'css/vendor/owl.carousel.min.css',
+        'css/vendor/owl.theme.default.min.css',
         'css/vendor/magnific-popup.css',
+        'css/vendor/photoswipe.css',
+        'css/vendor/default-skin.css',
         'fonts/icomoon/style.css',
         ])
         // .pipe(sourcemaps.init())
@@ -105,7 +115,7 @@ gulp.task('bs-reload', function () {
 gulp.task('browser-sync', function() {
     browserSync.init(['css/*.css', 'js/*.js'], {
         
-        proxy: 'localhost/probootstrap/frame'
+        proxy: 'localhost/probootstrap/pixels'
         /* For a static server you would use this: */
         /*
         server: {
@@ -120,7 +130,7 @@ gulp.task('default', ['sass', 'scripts', 'browser-sync'], function () {
     /* Watch scss, run the sass task on change. */
     gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass'])
     /* Watch app.js file, run the scripts task on change. */
-    gulp.watch(['js/custom.js'], ['minify-custom'])
+    gulp.watch(['js/main.js'], ['minify-main'])
     /* Watch .html files, run the bs-reload task on change. */
     gulp.watch(['*.html'], ['bs-reload']);
 });

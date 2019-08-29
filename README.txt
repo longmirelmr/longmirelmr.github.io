@@ -1,6 +1,8 @@
-THEME: Frame - Free Bootstrap Theme
+THEME: Pixels - Free Bootstrap Theme
 AUTHOR: uiCookies.com
 AUTHOR URI: https://uiCookies.com/
+Twitter: https://twitter.com/uiCookies
+Facebook: https://facebook.com/probootstrap
 
 
 CREDITS:
@@ -35,8 +37,11 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 Stellar Parallax
 http://markdalgleish.com/projects/stellar.js/
 
+Owl Carousel
+https://owlcarousel2.github.io/OwlCarousel2/
+
+FlexSlider
+http://flexslider.woothemes.com
+
 Demo Images
 https://unsplash.com
-
-Magnific Popup
-http://dimsemenov.com/plugins/magnific-popup/
